@@ -1,13 +1,13 @@
 {-# LANGUAGE DeriveGeneric #-}
 
-module Data.Person where
+module Data.Person.Person where
 
 import GHC.Generics (Generic)
 import Data.Aeson (ToJSON, FromJSON)
 
-data Person = Person { id :: Int
-                       ,name :: String
-                       ,age :: Int
+data Person = Person { _id :: Int
+                       ,_name :: String
+                       ,_age :: Int
                      } deriving (Show, Generic)
 
 instance ToJSON Person
