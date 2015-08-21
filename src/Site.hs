@@ -24,7 +24,7 @@ import           Heist
 import qualified Heist.Interpreted as I
 ------------------------------------------------------------------------------
 import           Application
-
+import           Web.Person
 
 ------------------------------------------------------------------------------
 -- | Render login form
@@ -66,6 +66,7 @@ routes :: [(ByteString, Handler App App ())]
 routes = [ ("/login",    with auth handleLoginSubmit)
          , ("/logout",   with auth handleLogout)
          , ("/new_user", with auth handleNewUser)
+         , ("/person", personHandler) 
          , ("",          serveDirectory "static")
          ]
 
